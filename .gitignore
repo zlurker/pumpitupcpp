@@ -1,0 +1,86 @@
+# Visual Studio
+.vscode/
+.vs/
+*.code-workspace
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.history/
+
+# Node modules
+node_modules/
+
+# Build Results
+#[Dd]ebug/
+#[Dd]ebugPublic/
+#[Rr]elease/
+#[Rr]eleases/
+#x64/
+#x86/
+#[Aa][Rr][Mm]/
+#[Aa][Rr][Mm]64/
+#bld/
+#[Bb]in/
+#[Oo]bj/
+#[Ll]og/
+#[Ll]ogs/
+
+# VS 2017/2019 pattern
+Generated\ Files/
+
+# Uncomment if you have tasks that create the project's static web assets (unbundled)
+# wwwroot/
+
+# Comment if you have tasks that create the project's static web assets (bundled)
+# _wwwroot/
+
+# Uncomment if you have tasks that create the project's static web assets (bundled)
+# dist/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# npm package directory
+node_modules/
+npm-debug.log
+yarn-error.log
+.yarn-integrity
