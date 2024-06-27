@@ -7,6 +7,7 @@ class ObjectList
 {
 public:
 	ObjectList();
+	std::vector<Object*> GetObjectList();
 	void AddObject(Object*);
 
 private:

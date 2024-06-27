@@ -49,6 +49,12 @@ void RenderEngine::render() {
 		}
 
 		window.clear();
+		std::vector<Object*> objectList = objectListSingleton->GetObjectList();
+		for (int i = 0; i < objectList.size(); i++) {
+			sf::Sprite sprite(*objectList[i]->GetTexture());
+			sprite.setPosition(objectList[i]->GetX(), objectList[i]->GetY());
+			window.draw(sprite);
+		}
 		/*sf::CircleShape shape(50);
 		shape.setFillColor(sf::Color::Green);
 		shape.setPosition(0, 0);

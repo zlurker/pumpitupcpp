@@ -4,16 +4,17 @@
 class Object
 {
 public:
-	Object(int, int, sf::Texture);
+	Object(int, int, sf::Texture*);
 	void SetX(int);
 	void SetY(int);
 	int GetX();
 	int GetY();
-	void SetTexture(sf::Texture);
+	void SetTexture(sf::Texture*);
+	sf::Texture* GetTexture();
 
 private:
 	int x;
 	int y;
-	sf::Texture texture;
+	sf::Texture* texture;
 };
 

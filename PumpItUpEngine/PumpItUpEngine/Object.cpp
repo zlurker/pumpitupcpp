@@ -1,6 +1,6 @@
 #include "Object.h"
 
-Object::Object(int xc, int yc, sf::Texture texturec) {
+Object::Object(int xc, int yc, sf::Texture* texturec) {
 	x = xc;
 	y = yc;
 	texture = texturec;
@@ -22,6 +22,10 @@ void Object::SetY(int yc) {
 	y = yc;
 }
 
-void Object::SetTexture(sf::Texture texturec) {
+void Object::SetTexture(sf::Texture* texturec) {
 	texture = texturec;
+}
+
+sf::Texture* Object::GetTexture() {
+	return texture;
 }
