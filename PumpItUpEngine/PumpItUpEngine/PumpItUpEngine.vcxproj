@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectList.cpp" />
     <ClCompile Include="RenderEngine.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>

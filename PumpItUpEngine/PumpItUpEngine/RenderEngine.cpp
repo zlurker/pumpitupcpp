@@ -4,6 +4,10 @@
 #include <iostream>
 #include "ObjectList.h"
 
+RenderEngine::RenderEngine(ObjectList* objectListSingletonInst) {
+	objectListSingleton = objectListSingletonInst;
+}
+
 void RenderEngine::render() {
 	sf::RenderWindow window(sf::VideoMode(800, 800), "Pump it up");
 	sf::Event e;
@@ -51,10 +55,10 @@ void RenderEngine::render() {
 
 		window.draw(shape);
 		window.draw(sprite);
-
+		*/
 		// Display the content
 		window.display();
-		*/
+		
 		//i++;
 	}
 }

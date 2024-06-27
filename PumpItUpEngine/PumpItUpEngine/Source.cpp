@@ -10,8 +10,11 @@ int main() {
 		return 0;
 	}
 
-	ObjectList::AddObject(new Object(0, 0, texture));
-	RenderEngine render;
+	ObjectList* objListSingleton = new ObjectList();
+
+
+	objListSingleton->AddObject(new Object(0, 0, texture));
+	RenderEngine render = RenderEngine(objListSingleton);
 	render.render();
 		
 	return 0;
