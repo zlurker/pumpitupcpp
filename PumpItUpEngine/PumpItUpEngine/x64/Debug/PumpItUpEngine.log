@@ -1,4 +1,5 @@
-﻿  RenderEngine.cpp
+﻿  Object.cpp
+  RenderEngine.cpp
   Source.cpp
   Generating Code...
   PumpItUpEngine.vcxproj -> C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe
