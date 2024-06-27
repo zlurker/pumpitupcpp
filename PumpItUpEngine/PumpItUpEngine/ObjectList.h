@@ -7,11 +7,12 @@ class ObjectList
 {
 public:
 	static void AddObject(Object* object) {
-		objectList.push_back(object);
+		std::lock_guard<std::mutex> guard(listMutex); // Lock the mutex
+		objectList->push_back(object);
 	}
 
 private:
-	static std::vector<Object*> objectList;
-	static std::mutex mutex;
+	static std::vector<Object*>* objectList;
+	static std::mutex listMutex;
 };
 

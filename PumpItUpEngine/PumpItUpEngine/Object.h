@@ -4,6 +4,7 @@
 class Object
 {
 public:
+	Object(int, int, sf::Texture);
 	void SetX(int);
 	void SetY(int);
 	int GetX();

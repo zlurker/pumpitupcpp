@@ -1,5 +1,11 @@
 #include "Object.h"
 
+Object::Object(int xc, int yc, sf::Texture texturec) {
+	x = xc;
+	y = yc;
+	texture = texturec;
+}
+
 int Object::GetX() {
 	return x;
 }

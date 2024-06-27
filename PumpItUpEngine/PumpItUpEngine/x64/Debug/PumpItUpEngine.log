@@ -2,4 +2,6 @@
   RenderEngine.cpp
   Source.cpp
   Generating Code...
-  PumpItUpEngine.vcxproj -> C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe
+Source.obj : error LNK2001: unresolved external symbol "private: static class std::vector<class Object *,class std::allocator<class Object *> > * ObjectList::objectList" (?objectList@ObjectList@@0PEAV?$vector@PEAVObject@@V?$allocator@PEAVObject@@@std@@@std@@EA)
+Source.obj : error LNK2001: unresolved external symbol "private: static class std::mutex ObjectList::listMutex" (?listMutex@ObjectList@@0Vmutex@std@@A)
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe : fatal error LNK1120: 2 unresolved externals
