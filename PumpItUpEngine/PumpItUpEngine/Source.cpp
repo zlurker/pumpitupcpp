@@ -13,6 +13,7 @@ int main() {
 
 	ObjectList* objListSingleton = new ObjectList();
 	FileLoader* fileLoaderSingleton = new FileLoader();
+	fileLoaderSingleton->LoadSSCFiles();
 
 	objListSingleton->AddObject(new Object(0, 0, texture));
 	objListSingleton->AddObject(new Object(100, 100, texture));
