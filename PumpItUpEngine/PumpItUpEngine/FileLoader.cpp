@@ -8,7 +8,9 @@ FileLoader::FileLoader() {
 }
 
 void FileLoader::LoadSSCFiles() {
+
 	fs::path base_path = fs::current_path();
+	std::cout << fs::current_path() << std::endl;
 	std::string relative_song_path = "Songs";
 
 	fs::path songFolderPath = base_path / relative_song_path;
