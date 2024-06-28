@@ -1,5 +1,6 @@
 #include "RenderEngine.h"
 #include "ObjectList.h"
+#include "FileLoader.h"
 #include <iostream>
 
 int main() {
@@ -11,6 +12,7 @@ int main() {
 	}
 
 	ObjectList* objListSingleton = new ObjectList();
+	FileLoader* fileLoaderSingleton = new FileLoader();
 
 	objListSingleton->AddObject(new Object(0, 0, texture));
 	objListSingleton->AddObject(new Object(100, 100, texture));
