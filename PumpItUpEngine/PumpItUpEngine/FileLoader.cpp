@@ -23,15 +23,16 @@ void FileLoader::ScanDirectory(std::string path) {
 	try {
 		for (const auto& entry : fs::directory_iterator(path)) {
 			if (entry.is_directory()) {
-				std::cout << "Scanning " << entry.path().filename().string() << " for SSC files" << std::endl;
+				//std::cout << "Scanning " << entry.path().filename().string() << " for SSC files" << std::endl;
 				ScanDirectory(entry.path().string());
 			}
 			else {
 				std::string ext = entry.path().extension().string();
 				std::transform(ext.begin(), ext.end(), ext.begin(), ::tolower);
 
-				if (ext._Equal(".ssc"))
-					std::cout << entry.path().string() << std::endl;
+				if (ext._Equal(".ssc")) {
+					sscFiles->push_back(new SSCFile(path, entry.path().filename().string()));
+				}
 			}
 		}
 	}

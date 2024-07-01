@@ -9,6 +9,6 @@ public:
 
 private:
 	std::string directoryPath;
-	std::string sscPath;
+	std::string sscFile;
 };
 

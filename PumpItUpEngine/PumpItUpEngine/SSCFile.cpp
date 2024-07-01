@@ -1,8 +1,10 @@
 #include "SSCFile.h"
+#include <iostream>
 
 SSCFile::SSCFile(std::string dP, std::string sP) {
 	directoryPath = dP;
-	sscPath = sP;
+	sscFile = sP;
+	std::cout << "Created new SSC file entry at directory " << directoryPath << "." << std::endl << "SSC Path : " << sscFile << std::endl;
 }
 
 std::string SSCFile::GetDirectoryPath() {
@@ -10,5 +12,5 @@ std::string SSCFile::GetDirectoryPath() {
 }
 
 std::string SSCFile::GetSSCPath() {
-	return sscPath;
+	return sscFile;
 }
