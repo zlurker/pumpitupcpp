@@ -15,11 +15,23 @@ void FileLoader::LoadSSCFiles() {
 
 	fs::path songFolderPath = base_path / relative_song_path;
 	//std::string songFolderPath = "..\Songs";
+	ScanDirectory(songFolderPath.string());
+	
+}
 
+void FileLoader::ScanDirectory(std::string path) {
 	try {
-		for (const auto& entry : fs::directory_iterator(songFolderPath)) {
+		for (const auto& entry : fs::directory_iterator(path)) {
 			if (entry.is_directory()) {
-				std::cout << entry.path().filename().string() << std::endl;
+				std::cout << "Scanning " << entry.path().filename().string() << " for SSC files" << std::endl;
+				ScanDirectory(entry.path().string());
+			}
+			else {
+				std::string ext = entry.path().extension().string();
+				std::transform(ext.begin(), ext.end(), ext.begin(), ::tolower);
+
+				if (ext._Equal(".ssc"))
+					std::cout << entry.path().string() << std::endl;
 			}
 		}
 	}

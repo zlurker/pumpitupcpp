@@ -9,6 +9,7 @@ public:
 	void LoadSSCFiles();
 
 private:
+	void ScanDirectory(std::string path);
 	std::vector<SSCFile*>* sscFiles;
 };
 
