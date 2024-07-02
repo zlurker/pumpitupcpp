@@ -8,7 +8,7 @@ SSCFile::SSCFile(std::string dP, std::string sP) {
 	sscFile = sP;
 
 	std::cout << "Created new SSC file entry at directory " << directoryPath << "." << std::endl << "SSC Path : " << sscFile << std::endl;
-	LoadSSCFileDetails(CombinePaths(directoryPath, sscFile));	
+	LoadSSCFileDetails(CombinePaths(directoryPath, sscFile));
 }
 
 void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
@@ -20,6 +20,7 @@ void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
 
 	std::cout << "Reading SSC file..." << std::endl;
 
+	bool isHeaders = true;
 	std::string content;
 	int colonIndex = 0;
 	int i = 0;
@@ -31,13 +32,24 @@ void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
 		if (ch == ':') colonIndex = i;
 
 		if (ch == ';') {
+			content.erase(std::remove(content.begin(), content.end(), '\n'), content.end());
+
 			std::string key = content.substr(0, colonIndex);
 			std::string value = content.substr(colonIndex);
+
+			if (key == "#NOTEDATA")
+				if (isHeaders) {
+					for (const auto& pair : sscKeyValues) {
+						std::cout << "Key: " << pair.first << ", Value: " << pair.second << std::endl;
+					}
+
+					isHeaders = false;
+				}
 			sscKeyValues[key] = value;
 			content = "";
 			i = 0;
 
-			std::cout << "Key: " << key << " Value: " << sscKeyValues[key] << std::endl;
+			//std::cout << "Key: " << key << " Value: " << sscKeyValues[key] << std::endl;
 		}
 		else {
 			content += ch;
@@ -45,7 +57,7 @@ void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
 		i++;
 	}
 
-	file.close(); 
+	file.close();
 
 	//std::cout << "File content:\n" << content << std::endl;
 }
