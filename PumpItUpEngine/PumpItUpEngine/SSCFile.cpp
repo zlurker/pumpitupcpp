@@ -19,10 +19,16 @@ void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
 
 	std::cout << "Reading SSC file..." << std::endl;
 
-	std::string line;
-	while (std::getline(file, line)) {  // Read file line by line
-		std::cout << line << std::endl;  // Output the line
+	std::string content;
+	char ch;
+
+	while (file.get(ch)) {
+		content += ch;
 	}
+
+	file.close(); 
+
+	std::cout << "File content:\n" << content << std::endl;
 }
 
 std::string SSCFile::GetDirectoryPath() {
