@@ -1,6 +1,7 @@
 #include "SSCFile.h"
 #include <fstream>
 #include <iostream>
+#include <unordered_map>
 
 SSCFile::SSCFile(std::string dP, std::string sP) {
 	directoryPath = dP;
@@ -20,15 +21,33 @@ void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
 	std::cout << "Reading SSC file..." << std::endl;
 
 	std::string content;
+	int colonIndex = 0;
+	int i = 0;
 	char ch;
 
+	std::unordered_map<std::string, std::string> sscKeyValues;
+
 	while (file.get(ch)) {
-		content += ch;
+		if (ch == ':') colonIndex = i;
+
+		if (ch == ';') {
+			std::string key = content.substr(0, colonIndex);
+			std::string value = content.substr(colonIndex);
+			sscKeyValues[key] = value;
+			content = "";
+			i = 0;
+
+			std::cout << "Key: " << key << " Value: " << sscKeyValues[key] << std::endl;
+		}
+		else {
+			content += ch;
+		}
+		i++;
 	}
 
 	file.close(); 
 
-	std::cout << "File content:\n" << content << std::endl;
+	//std::cout << "File content:\n" << content << std::endl;
 }
 
 std::string SSCFile::GetDirectoryPath() {
