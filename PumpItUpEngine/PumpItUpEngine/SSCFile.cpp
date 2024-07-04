@@ -8,7 +8,7 @@ SSCFile::SSCFile(std::string dP, std::string sP) {
 	directoryPath = dP;
 	sscFile = sP;
 
-	std::cout << "Created new SSC file entry at directory " << directoryPath << "." << std::endl << "SSC Path : " << sscFile << std::endl;
+	//std::cout << "Created new SSC file entry at directory " << directoryPath << "." << std::endl << "SSC Path : " << sscFile << std::endl;
 	LoadSSCFileDetails(CombinePaths(directoryPath, sscFile));
 }
 
@@ -19,7 +19,7 @@ void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
 		return;  // Exit if the file couldn't be opened
 	}
 
-	std::cout << "Reading SSC file..." << std::endl;
+	//std::cout << "Reading SSC file..." << std::endl;
 
 	bool isHeaders = true;
 	std::string content;
@@ -38,17 +38,22 @@ void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
 			std::string key = keyArray[keyArray.size() - 1];
 			std::string value = keyValuePair.size() > 1 ? keyValuePair[1]:"";
 
-			if (key == "NOTEDATA")
-				if (isHeaders) {
-					for (const auto& pair : sscKeyValues) {
-						std::cout << "Key: " << pair.first << ", Value: " << pair.second << std::endl;
-					}
+			sscKeyValues[key] = value;
 
+			if (key == "NOTEDATA") {
+				if (isHeaders) {
+					HandleHeader(sscKeyValues);
 					isHeaders = false;
 				}
-			sscKeyValues[key] = value;
-			content = "";
+				else {
 
+
+				}
+
+				sscKeyValues.clear();
+			}
+
+			content = "";
 			//std::cout << "Key: " << key << " Value: " << sscKeyValues[key] << std::endl;
 		}
 		else {
@@ -67,6 +72,16 @@ std::string SSCFile::GetDirectoryPath() {
 
 std::string SSCFile::GetSSCPath() {
 	return sscFile;
+}
+
+void SSCFile::GenerateSSCChartDetails() {
+	std::cout << "------------SONG DETAILS------------" << std::endl;
+	std::cout << "Name: " << name << std::endl;
+	std::cout << "Artist: " << artist << std::endl;
+	std::cout << "Banner: " << bannerPath << std::endl;
+	std::cout << "Music: " << musicPath << std::endl;
+	std::cout << "Song Category: " << songCategory << std::endl;
+	std::cout << "Display BPM: " << displayBpm << std::endl;
 }
 
 std::string SSCFile::CombinePaths(const std::string& path1, const std::string& path2) {
@@ -89,4 +104,17 @@ std::vector<std::string> SSCFile::Split(const std::string& str, const std::strin
 	}
 
 	return tokens;
+}
+
+void SSCFile::HandleHeader(std::unordered_map<std::string, std::string> map) {
+	name = map["TITLE"];
+	artist = map["ARTIST"];
+	bannerPath = map["BANNER"];
+	musicPath = map["MUSIC"];
+	songCategory = map["SONGCATEGORY"];
+	displayBpm = map["DISPLAYBPM"];
+}
+
+void SSCFile::HandleLevel(std::unordered_map<std::string, std::string> map) {
+
 }

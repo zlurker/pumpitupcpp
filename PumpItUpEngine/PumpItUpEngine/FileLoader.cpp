@@ -31,7 +31,9 @@ void FileLoader::ScanDirectory(std::string path) {
 				std::transform(ext.begin(), ext.end(), ext.begin(), ::tolower);
 
 				if (ext._Equal(".ssc")) {
-					sscFiles->push_back(new SSCFile(path, entry.path().filename().string()));
+					SSCFile* sscFile = new SSCFile(path, entry.path().filename().string());
+					sscFiles->push_back(sscFile);
+					sscFile->GenerateSSCChartDetails();
 				}
 			}
 		}
