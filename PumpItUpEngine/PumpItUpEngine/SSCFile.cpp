@@ -33,10 +33,12 @@ void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
 			content.erase(std::remove(content.begin(), content.end(), '\n'), content.end());
 
 			std::vector<std::string> keyValuePair =  Split(content, ":");
-			std::string key = keyValuePair[0];
+			std::vector<std::string> keyArray = Split(keyValuePair[0], "#");
+
+			std::string key = keyArray[keyArray.size() - 1];
 			std::string value = keyValuePair.size() > 1 ? keyValuePair[1]:"";
 
-			if (key == "#NOTEDATA")
+			if (key == "NOTEDATA")
 				if (isHeaders) {
 					for (const auto& pair : sscKeyValues) {
 						std::cout << "Key: " << pair.first << ", Value: " << pair.second << std::endl;
