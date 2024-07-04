@@ -2,11 +2,13 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include "SSCFileLevels.h"
+
 class SSCFile
 {
 public:
-	SSCFile(std::string, std::string);
-	void LoadSSCFileDetails(std::string);
+	SSCFile(const std::string&, const std::string&);
+	void LoadSSCFileDetails(const std::string&);
 	std::string GetDirectoryPath();
 	std::string GetSSCPath();
 	void GenerateSSCChartDetails();
@@ -26,5 +28,7 @@ private:
 	std::string musicPath;
 	std::string songCategory;
 	std::string displayBpm;
+
+	std::vector<SSCFileLevels*>* songLevels;
 };
 

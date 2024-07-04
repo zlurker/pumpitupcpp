@@ -4,7 +4,8 @@
 #include <unordered_map>
 #include <regex>
 
-SSCFile::SSCFile(std::string dP, std::string sP) {
+SSCFile::SSCFile(const std::string& dP, const std::string& sP) {
+	songLevels = new std::vector<SSCFileLevels*>();
 	directoryPath = dP;
 	sscFile = sP;
 
@@ -12,7 +13,7 @@ SSCFile::SSCFile(std::string dP, std::string sP) {
 	LoadSSCFileDetails(CombinePaths(directoryPath, sscFile));
 }
 
-void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
+void SSCFile::LoadSSCFileDetails(const std::string& sscFilePath) {
 	std::ifstream file(sscFilePath);  // Open the file
 	if (!file) {
 		std::cerr << "Unable to open file";
@@ -45,10 +46,8 @@ void SSCFile::LoadSSCFileDetails(std::string sscFilePath) {
 					HandleHeader(sscKeyValues);
 					isHeaders = false;
 				}
-				else {
-
-
-				}
+				else 
+					HandleLevel(sscKeyValues);				
 
 				sscKeyValues.clear();
 			}
@@ -82,6 +81,9 @@ void SSCFile::GenerateSSCChartDetails() {
 	std::cout << "Music: " << musicPath << std::endl;
 	std::cout << "Song Category: " << songCategory << std::endl;
 	std::cout << "Display BPM: " << displayBpm << std::endl;
+
+	for (int i = 0; i < songLevels->size(); i++)
+		(*songLevels)[i]->GenerateSSCFileLevelDetails();
 }
 
 std::string SSCFile::CombinePaths(const std::string& path1, const std::string& path2) {
@@ -116,5 +118,6 @@ void SSCFile::HandleHeader(std::unordered_map<std::string, std::string> map) {
 }
 
 void SSCFile::HandleLevel(std::unordered_map<std::string, std::string> map) {
-
+	SSCFileLevels* level = new SSCFileLevels(map["STEPSTYPE"], map["METER"]);
+	songLevels->push_back(level);
 }

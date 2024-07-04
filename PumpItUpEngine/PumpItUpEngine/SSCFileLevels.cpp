@@ -1,0 +1,14 @@
+#include "SSCFileLevels.h"
+#include <iostream>
+
+SSCFileLevels::SSCFileLevels(const std::string& sT, const std::string& m) {
+	stepType = sT;
+	meter = m;
+}
+
+void SSCFileLevels::GenerateSSCFileLevelDetails() {
+	std::cout << "------Level Details------" << std::endl;
+
+	std::cout << "StepType: " << stepType << std::endl;
+	std::cout << "Meter: " << meter << std::endl;
+}
