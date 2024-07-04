@@ -18,7 +18,7 @@ private:
 	std::vector<std::string> Split(const std::string& str, const std::string& delimiter);
 
 	void HandleHeader(std::unordered_map<std::string, std::string>);
-	void HandleLevel(std::unordered_map<std::string, std::string>);
+	void HandleLevel(std::unordered_map<std::string, std::string>,int,int);
 	std::string directoryPath;
 	std::string sscFile;
 

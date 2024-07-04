@@ -23,6 +23,8 @@ void SSCFile::LoadSSCFileDetails(const std::string& sscFilePath) {
 	//std::cout << "Reading SSC file..." << std::endl;
 
 	bool isHeaders = true;
+	int previousCheckPoint = 0;
+	int i = 0;
 	std::string content;
 	char ch;
 
@@ -33,11 +35,11 @@ void SSCFile::LoadSSCFileDetails(const std::string& sscFilePath) {
 		if (ch == ';') {
 			content.erase(std::remove(content.begin(), content.end(), '\n'), content.end());
 
-			std::vector<std::string> keyValuePair =  Split(content, ":");
+			std::vector<std::string> keyValuePair = Split(content, ":");
 			std::vector<std::string> keyArray = Split(keyValuePair[0], "#");
 
 			std::string key = keyArray[keyArray.size() - 1];
-			std::string value = keyValuePair.size() > 1 ? keyValuePair[1]:"";
+			std::string value = keyValuePair.size() > 1 ? keyValuePair[1] : "";
 
 			sscKeyValues[key] = value;
 
@@ -46,10 +48,11 @@ void SSCFile::LoadSSCFileDetails(const std::string& sscFilePath) {
 					HandleHeader(sscKeyValues);
 					isHeaders = false;
 				}
-				else 
-					HandleLevel(sscKeyValues);				
+				else
+					HandleLevel(sscKeyValues, previousCheckPoint, i);
 
 				sscKeyValues.clear();
+				previousCheckPoint = i;
 			}
 
 			content = "";
@@ -58,7 +61,11 @@ void SSCFile::LoadSSCFileDetails(const std::string& sscFilePath) {
 		else {
 			content += ch;
 		}
+
+		i++;
 	}
+
+	HandleLevel(sscKeyValues, previousCheckPoint, i);
 
 	file.close();
 
@@ -117,7 +124,7 @@ void SSCFile::HandleHeader(std::unordered_map<std::string, std::string> map) {
 	displayBpm = map["DISPLAYBPM"];
 }
 
-void SSCFile::HandleLevel(std::unordered_map<std::string, std::string> map) {
-	SSCFileLevels* level = new SSCFileLevels(map["STEPSTYPE"], map["METER"]);
+void SSCFile::HandleLevel(std::unordered_map<std::string, std::string> map, int charStart, int charEnd) {
+	SSCFileLevels* level = new SSCFileLevels(map["STEPSTYPE"], map["METER"], charStart, charEnd);
 	songLevels->push_back(level);
 }
