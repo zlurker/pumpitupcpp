@@ -1,9 +1,10 @@
 #include "Object.h"
 
-Object::Object(int xc, int yc, sf::Texture* texturec) {
+Object::Object(int xc, int yc, sf::Texture* texturec, sf::IntRect* tR) {
 	x = xc;
 	y = yc;
 	texture = texturec;
+	textureRect = tR;
 }
 
 int Object::GetX() {
@@ -28,4 +29,8 @@ void Object::SetTexture(sf::Texture* texturec) {
 
 sf::Texture* Object::GetTexture() {
 	return texture;
+}
+
+sf::IntRect* Object::GetTextureRect() {
+	return textureRect;
 }

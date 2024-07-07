@@ -51,15 +51,8 @@ void RenderEngine::render() {
 		window.clear();
 		std::vector<Object*> objectList = objectListSingleton->GetObjectList();
 		for (int i = 0; i < objectList.size(); i++) {
-			sf::Vector2u size = objectList[i]->GetTexture()->getSize();
-			unsigned int width = size.x;
-			unsigned int height = size.y;
-
-			// Print the size of the texture
-			std::cout << "Texture width: " << width << ", height: " << height << std::endl;
-
 			sf::Sprite sprite(*objectList[i]->GetTexture());
-			sprite.setTextureRect(sf::IntRect(0, 0, width, height / 2));
+			sprite.setTextureRect(*objectList[i]->GetTextureRect());
 			sprite.setPosition(objectList[i]->GetX(), objectList[i]->GetY());
 			window.draw(sprite);
 		}

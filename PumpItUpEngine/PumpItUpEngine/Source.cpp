@@ -25,10 +25,16 @@ int main() {
 		return 0;
 	}
 
-	objListSingleton->AddObject(new Object(0, 0, texture));
-	objListSingleton->AddObject(new Object(100, 100, texture));
-	objListSingleton->AddObject(new Object(200, 200, texture));
-	objListSingleton->AddObject(new Object(300, 300, texture));
+	sf::Vector2u size = texture->getSize();
+	unsigned int width = size.x;
+	unsigned int height = size.y;
+	sf::IntRect* sequenceZoneRect = new sf::IntRect(0, 0, width, height / 2);
+
+	objListSingleton->AddObject(new Object(0, 0, texture, sequenceZoneRect));
+	objListSingleton->AddObject(new Object(100, 100, texture, sequenceZoneRect));
+	objListSingleton->AddObject(new Object(100, 100, texture, sequenceZoneRect));
+	objListSingleton->AddObject(new Object(200, 200, texture, sequenceZoneRect));
+	objListSingleton->AddObject(new Object(300, 300, texture, sequenceZoneRect));
 
 	RenderEngine render = RenderEngine(objListSingleton);
 	render.render();
