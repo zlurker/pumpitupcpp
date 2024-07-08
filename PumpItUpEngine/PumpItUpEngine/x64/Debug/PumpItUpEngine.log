@@ -1,6 +1,12 @@
-﻿  RenderEngine.cpp
-D:\C++ Projects\Pump It Up\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\C++ Projects\Pump It Up\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  FileLoader.cpp
+  FileParserBase.cpp
+  Object.cpp
+  ObjectList.cpp
+  RenderEngine.cpp
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Source.cpp
+  SSCFile.cpp
+  SSCFileLevels.cpp
   Generating Code...
-  PumpItUpEngine.vcxproj -> D:\C++ Projects\Pump It Up\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe
+  PumpItUpEngine.vcxproj -> C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe
