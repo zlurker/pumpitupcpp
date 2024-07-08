@@ -5,7 +5,6 @@
 #include <regex>
 
 void FileParserBase::ParseFile(std::string filePath) {
-	sscKeyValues = new std::unordered_map<std::string, std::string>();
 	currentChar = 0;
 
 	std::ifstream file(filePath);  // Open the file
@@ -28,7 +27,7 @@ void FileParserBase::ParseFile(std::string filePath) {
 			std::string key = keyArray[keyArray.size() - 1];
 			std::string value = keyValuePair.size() > 1 ? keyValuePair[1] : "";
 
-			(*sscKeyValues)[key] = value;
+			sscKeyValues[key] = value;
 
 			OnEndKeyValuePair();
 		}
@@ -39,8 +38,9 @@ void FileParserBase::ParseFile(std::string filePath) {
 		currentChar++;
 	}
 
+	OnEndFileParsing();
 	file.close();
-	delete sscKeyValues;
+	sscKeyValues.clear();
 }
 
 int FileParserBase::GetCurrentChar() {
@@ -48,10 +48,14 @@ int FileParserBase::GetCurrentChar() {
 }
 
 std::unordered_map<std::string, std::string>* FileParserBase::GetSSCKeyValues() {
-	return sscKeyValues;
+	return &sscKeyValues;
 }
 
 void FileParserBase::OnEndKeyValuePair() {
+
+}
+
+void FileParserBase::OnEndFileParsing(){
 
 }
 
