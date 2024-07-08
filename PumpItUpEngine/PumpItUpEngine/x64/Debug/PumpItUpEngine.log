@@ -1,5 +1,6 @@
 ﻿  FileLoader.cpp
   FileParserBase.cpp
+  MainSSCParser.cpp
   Object.cpp
   ObjectList.cpp
   RenderEngine.cpp
