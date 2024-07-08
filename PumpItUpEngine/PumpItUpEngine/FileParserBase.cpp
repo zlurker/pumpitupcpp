@@ -6,7 +6,8 @@
 
 void FileParserBase::ParseFile(std::string filePath) {
 	currentChar = 0;
-
+	OnStartParse();
+	
 	std::ifstream file(filePath);  // Open the file
 	if (!file) {
 		std::cerr << "Unable to open file";
@@ -29,7 +30,7 @@ void FileParserBase::ParseFile(std::string filePath) {
 
 			sscKeyValues[key] = value;
 
-			OnEndKeyValuePair();
+			OnEndKeyValuePair(key);
 		}
 		else {
 			content += ch;
@@ -51,7 +52,11 @@ std::unordered_map<std::string, std::string>* FileParserBase::GetSSCKeyValues() 
 	return &sscKeyValues;
 }
 
-void FileParserBase::OnEndKeyValuePair() {
+void FileParserBase::OnStartParse() {
+
+}
+
+void FileParserBase::OnEndKeyValuePair(const std::string& key) {
 
 }
 

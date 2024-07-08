@@ -10,6 +10,12 @@ public:
     MainSSCParser(SSCFile*);
 
 private:
+    virtual void OnStartParse();
+    virtual void OnEndKeyValuePair(const std::string& key);
+    virtual void OnEndFileParsing();
+
     SSCFile* sscFile;
+    bool isHeaders;
+    int previousCheckPoint;
 };
 

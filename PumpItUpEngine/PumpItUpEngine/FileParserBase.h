@@ -7,12 +7,15 @@ class FileParserBase
 public:
 	void ParseFile(std::string);
 
-private:
-	virtual int GetCurrentChar();
-	virtual std::unordered_map<std::string, std::string>* GetSSCKeyValues();
-	virtual void OnEndKeyValuePair();
+	int GetCurrentChar();
+	std::unordered_map<std::string, std::string>* GetSSCKeyValues();
+	std::vector<std::string> Split(const std::string& str, const std::string& delimiter);
+
+	virtual void OnStartParse();
+	virtual void OnEndKeyValuePair(const std::string& key);
 	virtual void OnEndFileParsing();
-	virtual std::vector<std::string> Split(const std::string& str, const std::string& delimiter);
+
+private:
 
 	int currentChar;
 	std::unordered_map<std::string, std::string> sscKeyValues;

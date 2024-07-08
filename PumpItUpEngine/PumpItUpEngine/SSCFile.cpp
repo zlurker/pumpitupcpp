@@ -3,6 +3,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <regex>
+#include "MainSSCParser.h"
 
 SSCFile::SSCFile(const std::string& dP, const std::string& sP) {
 	songLevels = new std::vector<SSCFileLevels*>();
@@ -14,7 +15,10 @@ SSCFile::SSCFile(const std::string& dP, const std::string& sP) {
 }
 
 void SSCFile::LoadSSCFileDetails(const std::string& sscFilePath) {
-	std::ifstream file(sscFilePath);  // Open the file
+	MainSSCParser parser = MainSSCParser(this);
+	parser.ParseFile(sscFilePath);
+
+	/*std::ifstream file(sscFilePath);  // Open the file
 	if (!file) {
 		std::cerr << "Unable to open file";
 		return;  // Exit if the file couldn't be opened
@@ -68,7 +72,7 @@ void SSCFile::LoadSSCFileDetails(const std::string& sscFilePath) {
 	HandleLevel(sscKeyValues, previousCheckPoint, i);
 
 	file.close();
-
+	*/
 	//std::cout << "File content:\n" << content << std::endl;
 }
 
@@ -115,16 +119,16 @@ std::vector<std::string> SSCFile::Split(const std::string& str, const std::strin
 	return tokens;
 }
 
-void SSCFile::HandleHeader(std::unordered_map<std::string, std::string> map) {
-	name = map["TITLE"];
-	artist = map["ARTIST"];
-	bannerPath = map["BANNER"];
-	musicPath = map["MUSIC"];
-	songCategory = map["SONGCATEGORY"];
-	displayBpm = map["DISPLAYBPM"];
+void SSCFile::HandleHeader(const std::unordered_map<std::string, std::string>& map) {
+	name = map.at("TITLE");
+	artist = map.at("ARTIST");
+	bannerPath = map.at("BANNER");
+	musicPath = map.at("MUSIC");
+	songCategory = map.at("SONGCATEGORY");
+	displayBpm = map.at("DISPLAYBPM");
 }
 
-void SSCFile::HandleLevel(std::unordered_map<std::string, std::string> map, int charStart, int charEnd) {
-	SSCFileLevels* level = new SSCFileLevels(map["STEPSTYPE"], map["METER"], charStart, charEnd);
+void SSCFile::HandleLevel(const std::unordered_map<std::string, std::string>& map, int charStart, int charEnd) {
+	SSCFileLevels* level = new SSCFileLevels(map.at("STEPSTYPE"), map.at("METER"), charStart, charEnd);
 	songLevels->push_back(level);
 }
