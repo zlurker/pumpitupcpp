@@ -31,6 +31,7 @@ void FileParserBase::ParseFile(std::string filePath) {
 			sscKeyValues[key] = value;
 
 			OnEndKeyValuePair(key);
+			content = "";
 		}
 		else {
 			content += ch;

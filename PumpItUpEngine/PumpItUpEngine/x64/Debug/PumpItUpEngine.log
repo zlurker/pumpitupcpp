@@ -1,13 +1,2 @@
-﻿  FileLoader.cpp
-  FileParserBase.cpp
-  MainSSCParser.cpp
-  Object.cpp
-  ObjectList.cpp
-  RenderEngine.cpp
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Source.cpp
-  SSCFile.cpp
-  SSCFileLevels.cpp
-  Generating Code...
+﻿  FileParserBase.cpp
   PumpItUpEngine.vcxproj -> C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe
