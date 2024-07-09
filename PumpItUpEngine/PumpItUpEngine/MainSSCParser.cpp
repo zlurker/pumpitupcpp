@@ -9,8 +9,6 @@ MainSSCParser::MainSSCParser(SSCFile* sF) {
 void MainSSCParser::OnStartParse() {
 	isHeaders = true;
 	previousCheckPoint = 0;
-
-	std::cout << "Start parse is working" << std::endl;
 }
 
 void MainSSCParser::OnEndKeyValuePair(const std::string& key) {

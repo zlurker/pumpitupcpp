@@ -4,11 +4,11 @@
 #include <unordered_map>
 #include <regex>
 
-void FileParserBase::ParseFile(std::string filePath) {
+void FileParserBase::ParseFile(const std::string& filePath) {
 	ParseFile(filePath, 0, std::nullopt);
 }
 
-void FileParserBase::ParseFile(std::string filePath, std::optional<int> startIndex, std::optional<int> length) {
+void FileParserBase::ParseFile(const std::string& filePath, std::optional<int> startIndex, std::optional<int> length) {
 	currentChar = -1;
 	OnStartParse();
 

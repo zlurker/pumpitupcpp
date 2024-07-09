@@ -5,7 +5,9 @@ class SSCFileLevels
 {
 public:
 	SSCFileLevels(const std::string&, const std::string&,int,int);
-	void GenerateSSCFileLevelDetails();
+	void GenerateSSCFileLevelStringDetails();
+	int GetCharStart();
+	int GetCharEnd();
 
 private:
 	std::string stepType;

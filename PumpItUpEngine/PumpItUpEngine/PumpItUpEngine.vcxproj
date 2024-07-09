@@ -161,6 +161,7 @@
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SSCFile.cpp" />
     <ClCompile Include="SSCFileLevels.cpp" />
+    <ClCompile Include="SSCLevelParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileLoader.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="RenderEngine.h" />
     <ClInclude Include="SSCFile.h" />
     <ClInclude Include="SSCFileLevels.h" />
+    <ClInclude Include="SSCLevelParser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

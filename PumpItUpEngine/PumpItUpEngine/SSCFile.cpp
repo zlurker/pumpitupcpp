@@ -11,7 +11,7 @@ SSCFile::SSCFile(const std::string& dP, const std::string& sP) {
 	sscFile = sP;
 
 	//std::cout << "Created new SSC file entry at directory " << directoryPath << "." << std::endl << "SSC Path : " << sscFile << std::endl;
-	LoadSSCFileDetails(CombinePaths(directoryPath, sscFile));
+	LoadSSCFileDetails(GetSSCFullPath());
 }
 
 void SSCFile::LoadSSCFileDetails(const std::string& sscFilePath) {
@@ -73,7 +73,6 @@ void SSCFile::LoadSSCFileDetails(const std::string& sscFilePath) {
 
 	file.close();
 	*/
-	//std::cout << "File content:\n" << content << std::endl;
 }
 
 std::string SSCFile::GetDirectoryPath() {
@@ -82,6 +81,10 @@ std::string SSCFile::GetDirectoryPath() {
 
 std::string SSCFile::GetSSCPath() {
 	return sscFile;
+}
+
+std::string SSCFile::GetSSCFullPath() {
+	return CombinePaths(directoryPath, sscFile);
 }
 
 void SSCFile::GenerateSSCChartDetails() {
@@ -94,7 +97,7 @@ void SSCFile::GenerateSSCChartDetails() {
 	std::cout << "Display BPM: " << displayBpm << std::endl;
 
 	for (int i = 0; i < songLevels->size(); i++)
-		(*songLevels)[i]->GenerateSSCFileLevelDetails();
+		(*songLevels)[i]->GenerateSSCFileLevelStringDetails();
 }
 
 std::string SSCFile::CombinePaths(const std::string& path1, const std::string& path2) {

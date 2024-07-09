@@ -6,8 +6,8 @@
 class FileParserBase
 {
 public:
-	void ParseFile(std::string);
-	void ParseFile(std::string, std::optional<int>, std::optional<int>);
+	void ParseFile(const std::string&);
+	void ParseFile(const std::string&, std::optional<int>, std::optional<int>);
 
 	int GetCurrentChar();
 	std::unordered_map<std::string, std::string>* GetSSCKeyValues();

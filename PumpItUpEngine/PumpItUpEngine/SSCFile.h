@@ -11,6 +11,7 @@ public:
 	void LoadSSCFileDetails(const std::string&);
 	std::string GetDirectoryPath();
 	std::string GetSSCPath();
+	std::string GetSSCFullPath();
 	void GenerateSSCChartDetails();
 
 	void HandleHeader(const std::unordered_map<std::string, std::string>&);
