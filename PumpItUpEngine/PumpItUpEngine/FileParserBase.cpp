@@ -5,19 +5,29 @@
 #include <regex>
 
 void FileParserBase::ParseFile(std::string filePath) {
-	currentChar = 0;
+	ParseFile(filePath, 0, std::nullopt);
+}
+
+void FileParserBase::ParseFile(std::string filePath, std::optional<int> startIndex, std::optional<int> length) {
+	currentChar = -1;
 	OnStartParse();
-	
+
 	std::ifstream file(filePath);  // Open the file
 	if (!file) {
 		std::cerr << "Unable to open file";
 		return;  // Exit if the file couldn't be opened
 	}
-
+	
 	std::string content;
 	char ch;
 
 	while (file.get(ch)) {
+
+		currentChar++;
+
+		if (startIndex.has_value())
+			if (startIndex.value() > currentChar)
+				continue;
 
 		if (ch == ';') {
 			content.erase(std::remove(content.begin(), content.end(), '\n'), content.end());
@@ -37,7 +47,9 @@ void FileParserBase::ParseFile(std::string filePath) {
 			content += ch;
 		}
 
-		currentChar++;
+		if (length.has_value())
+			if (length.value() <= currentChar)
+				break;
 	}
 
 	OnEndFileParsing();
@@ -61,7 +73,7 @@ void FileParserBase::OnEndKeyValuePair(const std::string& key) {
 
 }
 
-void FileParserBase::OnEndFileParsing(){
+void FileParserBase::OnEndFileParsing() {
 
 }
 

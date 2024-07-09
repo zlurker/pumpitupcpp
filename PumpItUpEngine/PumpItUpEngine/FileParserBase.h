@@ -1,11 +1,13 @@
 #pragma once
 #include <unordered_map>
 #include <string>
+#include <optional>
 
 class FileParserBase
 {
 public:
 	void ParseFile(std::string);
+	void ParseFile(std::string, std::optional<int>, std::optional<int>);
 
 	int GetCurrentChar();
 	std::unordered_map<std::string, std::string>* GetSSCKeyValues();
