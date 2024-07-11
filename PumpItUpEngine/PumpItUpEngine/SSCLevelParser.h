@@ -1,15 +1,16 @@
 #pragma once
 #include "FileParserBase.h"
 #include "SSCFileLevels.h"
+#include "GameLevel.h"
 
 class SSCLevelParser :
     public FileParserBase
 {
 public:
-    SSCLevelParser(SSCFileLevels*);
+    SSCLevelParser(GameLevel*);
 private:
     virtual void OnEndFileParsing();
 
-    SSCFileLevels* sscLevel;
+    GameLevel* gameLevel;
 };
 
