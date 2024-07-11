@@ -1,4 +1,16 @@
 ﻿  FileLoader.cpp
   FileParserBase.cpp
+  GameLevel.cpp
+  MainSSCParser.cpp
+  Object.cpp
+  ObjectList.cpp
+  RenderEngine.cpp
+D:\C++ Projects\Pump It Up\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\C++ Projects\Pump It Up\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Source.cpp
+D:\C++ Projects\Pump It Up\PumpItUpEngine\PumpItUpEngine\Source.cpp(41,12): warning C4101: 'gameLevel': unreferenced local variable
+  SSCFile.cpp
+  SSCFileLevels.cpp
+  SSCLevelParser.cpp
   Generating Code...
   PumpItUpEngine.vcxproj -> D:\C++ Projects\Pump It Up\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe

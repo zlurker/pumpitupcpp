@@ -6,11 +6,8 @@
 class SSCLevelParser :
     public FileParserBase
 {
-public:
-    SSCLevelParser(GameLevel*);
+
 private:
     virtual void OnEndFileParsing();
-
-    GameLevel* gameLevel;
 };
 

@@ -39,7 +39,7 @@ int main() {
 	objListSingleton->AddObject(new Object(300, 300, texture, sequenceZoneRect));
 
 	GameLevel gameLevel;
-	SSCLevelParser sscLevelParser(&gameLevel);
+	SSCLevelParser sscLevelParser;
 	SSCFile* sscFile = fileLoaderSingleton->GetSSCFile(0);
 	SSCFileLevels* sscFileLevel = sscFile->GetLevel(0);
 
