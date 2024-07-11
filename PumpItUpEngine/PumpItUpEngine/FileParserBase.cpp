@@ -30,12 +30,14 @@ void FileParserBase::ParseFile(const std::string& filePath, std::optional<int> s
 				continue;
 
 		if (ch == ';') {
-			content.erase(std::remove(content.begin(), content.end(), '\n'), content.end());
+			
 
 			std::vector<std::string> keyValuePair = Split(content, ":");
 			std::vector<std::string> keyArray = Split(keyValuePair[0], "#");
 
 			std::string key = keyArray[keyArray.size() - 1];
+			key.erase(std::remove(key.begin(), key.end(), '\n'), key.end());
+
 			std::string value = keyValuePair.size() > 1 ? keyValuePair[1] : "";
 
 			sscKeyValues[key] = value;
