@@ -3,6 +3,8 @@
 #include "FileLoader.h"
 #include <filesystem>
 #include <iostream>
+#include "SSCLevelParser.h"
+#include "GameLevel.h"
 namespace fs = std::filesystem;
 
 int main() {
@@ -35,6 +37,13 @@ int main() {
 	objListSingleton->AddObject(new Object(100, 100, texture, sequenceZoneRect));
 	objListSingleton->AddObject(new Object(200, 200, texture, sequenceZoneRect));
 	objListSingleton->AddObject(new Object(300, 300, texture, sequenceZoneRect));
+
+	GameLevel gameLevel;
+	SSCLevelParser sscLevelParser(&gameLevel);
+	SSCFile* sscFile = fileLoaderSingleton->GetSSCFile(0);
+	SSCFileLevels* sscFileLevel = sscFile->GetLevel(0);
+
+	sscLevelParser.ParseFile(sscFile->GetSSCFullPath(),sscFileLevel->GetCharStart(), sscFileLevel->GetCharEnd());
 
 	RenderEngine render = RenderEngine(objListSingleton);
 	render.render();

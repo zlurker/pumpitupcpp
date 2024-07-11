@@ -13,6 +13,7 @@ public:
 	std::string GetSSCPath();
 	std::string GetSSCFullPath();
 	void GenerateSSCChartDetails();
+	SSCFileLevels* GetLevel(int);
 
 	void HandleHeader(const std::unordered_map<std::string, std::string>&);
 	void HandleLevel(const std::unordered_map<std::string, std::string>&, int, int);

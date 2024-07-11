@@ -135,3 +135,7 @@ void SSCFile::HandleLevel(const std::unordered_map<std::string, std::string>& ma
 	SSCFileLevels* level = new SSCFileLevels(map.at("STEPSTYPE"), map.at("METER"), charStart, charEnd);
 	songLevels->push_back(level);
 }
+
+SSCFileLevels* SSCFile::GetLevel(int id) {
+	return (*songLevels)[id];
+}

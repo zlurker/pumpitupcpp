@@ -42,3 +42,7 @@ void FileLoader::ScanDirectory(std::string path) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 }
+
+SSCFile* FileLoader::GetSSCFile(int id) {
+	return (*sscFiles)[id];
+}
