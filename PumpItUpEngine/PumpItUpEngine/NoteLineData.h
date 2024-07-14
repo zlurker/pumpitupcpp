@@ -3,8 +3,11 @@
 
 class NoteLineData {
 public:
-	NoteLineData(float, int);
+	NoteLineData(float);
 	void AddNoteToLine(int);
+
+	float GetNotesYPosition();
+	const std::vector<int>& GetNotesXPosition();
 
 private:
 	float notesPositionY;

@@ -86,7 +86,7 @@ std::vector<std::string> FileParserBase::Split(const std::string& str, const std
 	std::sregex_token_iterator end;
 
 	while (iter != end) {
-		tokens.push_back(*iter++);
+			tokens.push_back(*iter++);
 	}
 
 	return tokens;

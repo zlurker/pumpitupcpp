@@ -10,6 +10,8 @@ class SSCLevelParser :
 {
 
 private:
+    void GenerateNoteLineData(const std::string&);
+
     std::vector<NoteLineData> noteLineDatas;
     virtual void OnEndFileParsing();
 };

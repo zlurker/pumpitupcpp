@@ -1,10 +1,17 @@
 #include "NoteLineData.h"
 
-NoteLineData::NoteLineData(float nPY, int nPX) {
+NoteLineData::NoteLineData(float nPY) {
 	notesPositionY = nPY;
-	notesPositionX.push_back(nPX);
 }
 
 void NoteLineData::AddNoteToLine(int nPX) {
 	notesPositionX.push_back(nPX);
+}
+
+float NoteLineData::GetNotesYPosition() {
+	return notesPositionY;
+}
+
+const std::vector<int>& NoteLineData::GetNotesXPosition() {
+	return notesPositionX;
 }
