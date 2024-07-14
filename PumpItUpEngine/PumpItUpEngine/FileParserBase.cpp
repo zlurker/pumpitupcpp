@@ -35,19 +35,16 @@ void FileParserBase::ParseFile(const std::string& filePath, std::optional<int> s
 
 
 			std::vector<std::string> keyValuePair = Split(content, ":");
+			std::vector<std::string> keyArray = Split(keyValuePair[0], "#");
 
-			if (keyValuePair.size() >= 2) {
-				std::vector<std::string> keyArray = Split(keyValuePair[0], "#");
+			std::string key = keyArray[keyArray.size() - 1];
+			key.erase(std::remove(key.begin(), key.end(), '\n'), key.end());
 
-				std::string key = keyArray[keyArray.size() - 1];
-				key.erase(std::remove(key.begin(), key.end(), '\n'), key.end());
+			std::string value = keyValuePair.size() > 1 ? keyValuePair[1] : "";
 
-				std::string value = keyValuePair.size() > 1 ? keyValuePair[1] : "";
+			sscKeyValues[key] = value;
 
-				sscKeyValues[key] = value;
-
-				OnEndKeyValuePair(key);
-			}
+			OnEndKeyValuePair(key);
 
 			content = "";
 		}
@@ -92,11 +89,11 @@ std::vector<std::string> FileParserBase::Split(const std::string& str, const std
 	std::sregex_token_iterator end;
 
 	while (iter != end) {
-		/* - Need to review why this part isnt working... after we remove the empty entries it seem to not parse the things properly
+		// - Need to review why this part isnt working... after we remove the empty entries it seem to not parse the things properly
 		std::string token = (*iter++).str();
-		if (token.size() > 0) tokens.push_back(*iter++);
-		*/
-		tokens.push_back(*iter++);
+		if (token.size() > 0) tokens.push_back(token);
+		
+		//tokens.push_back(*iter++);
 	}
 
 	return tokens;
