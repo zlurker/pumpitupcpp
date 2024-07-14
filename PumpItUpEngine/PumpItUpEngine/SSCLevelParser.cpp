@@ -19,9 +19,9 @@ void SSCLevelParser::GenerateNoteLineData(const std::string& nD) {
 			float position = i + ((1.0f / noteSectionLines.size()) * j);
 			NoteLineData noteLineData(position);
 
-			for (int k = 0; k < noteSectionLines[j].size(); k++) 
+			for (int k = 0; k < noteSectionLines[j].size(); k++)
 				if (noteSectionLines[j][k] != '0')
-					noteLineData.AddNoteToLine(k);
+					noteLineData.AddNoteToLine(k, noteSectionLines[j][k]);
 			
 			if (noteLineData.GetNotesXPosition().size() > 0)
 				noteLineDatas.push_back(noteLineData);

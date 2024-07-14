@@ -156,6 +156,7 @@
     <ClCompile Include="FileParserBase.cpp" />
     <ClCompile Include="GameLevel.cpp" />
     <ClCompile Include="MainSSCParser.cpp" />
+    <ClCompile Include="NoteData.cpp" />
     <ClCompile Include="NoteLineData.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectList.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="FileParserBase.h" />
     <ClInclude Include="GameLevel.h" />
     <ClInclude Include="MainSSCParser.h" />
+    <ClInclude Include="NoteData.h" />
     <ClInclude Include="NoteLineData.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectList.h" />

@@ -4,14 +4,14 @@ NoteLineData::NoteLineData(float nPY) {
 	notesPositionY = nPY;
 }
 
-void NoteLineData::AddNoteToLine(int nPX) {
-	notesPositionX.push_back(nPX);
+void NoteLineData::AddNoteToLine(int nPX,char nT) {\
+	notesPositionX.push_back(NoteData(nPX, nT));
 }
 
 float NoteLineData::GetNotesYPosition() {
 	return notesPositionY;
 }
 
-const std::vector<int>& NoteLineData::GetNotesXPosition() {
+const std::vector<NoteData>& NoteLineData::GetNotesXPosition() {
 	return notesPositionX;
 }
