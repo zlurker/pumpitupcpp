@@ -7,6 +7,24 @@
 #include "GameLevel.h"
 namespace fs = std::filesystem;
 
+sf::Texture* RetrieveTexture(const fs::path& arrowFilePath) {
+	sf::Texture* texture = new sf::Texture();
+	if (!texture->loadFromFile(arrowFilePath.string())) {
+		std::cerr << "Failed to load image" << std::endl;
+		return nullptr;
+	}
+
+	return texture;
+}
+
+sf::IntRect* GenerateRect(const sf::Texture& texture, int widthDivision, int heightDivision) {
+	sf::Vector2u size = texture.getSize();
+	unsigned int width = size.x;
+	unsigned int height = size.y;
+	sf::IntRect* rect = new sf::IntRect(0, 0, width / widthDivision, height / heightDivision);
+	return rect;
+}
+
 int main() {
 
 
@@ -20,17 +38,8 @@ int main() {
 
 	fs::path arrowFilePath = base_path / relative_arrow_path / "BASE 1x2.PNG";
 
-
-	sf::Texture* texture = new sf::Texture();
-	if (!texture->loadFromFile(arrowFilePath.string())) {
-		std::cerr << "Failed to load image" << std::endl;
-		return 0;
-	}
-
-	sf::Vector2u size = texture->getSize();
-	unsigned int width = size.x;
-	unsigned int height = size.y;
-	sf::IntRect* sequenceZoneRect = new sf::IntRect(0, 0, width, height / 2);
+	sf::Texture* texture = RetrieveTexture(arrowFilePath);
+	sf::IntRect* sequenceZoneRect = GenerateRect(*texture,1,2);
 
 	objListSingleton->AddObject(new Object(0, 0, texture, sequenceZoneRect));
 	objListSingleton->AddObject(new Object(100, 100, texture, sequenceZoneRect));
