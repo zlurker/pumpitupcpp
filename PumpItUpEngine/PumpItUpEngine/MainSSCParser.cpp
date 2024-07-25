@@ -25,7 +25,7 @@ void MainSSCParser::OnEndKeyValuePair(const std::string& key) {
 			sscFile->HandleLevel(*sscKeyValues, previousCheckPoint, currentChar);
 
 		sscKeyValues->clear();
-		previousCheckPoint = currentChar;
+		previousCheckPoint = currentChar + 1;
 	}
 }
 
