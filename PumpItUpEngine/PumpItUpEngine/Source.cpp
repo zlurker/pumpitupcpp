@@ -17,11 +17,14 @@ sf::Texture* RetrieveTexture(const fs::path& arrowFilePath) {
 	return texture;
 }
 
-sf::IntRect* GenerateRect(const sf::Texture& texture, int widthDivision, int heightDivision) {
+sf::IntRect* GenerateRect(const sf::Texture& texture, int widthDivision, int heightDivision, bool mirrorX) {
 	sf::Vector2u size = texture.getSize();
 	unsigned int width = size.x;
 	unsigned int height = size.y;
-	sf::IntRect* rect = new sf::IntRect(0, 0, width / widthDivision, height / heightDivision);
+
+	int xMirrorMultiplier = mirrorX ? -1:1;
+
+	sf::IntRect* rect = new sf::IntRect(mirrorX ? width:0, 0, xMirrorMultiplier * (width / widthDivision), height / heightDivision);
 	return rect;
 }
 
@@ -36,26 +39,43 @@ int main() {
 	std::cout << fs::current_path() << std::endl;
 	std::string relative_arrow_path = "ArrowTextures";
 
-	fs::path arrowFilePath = base_path / relative_arrow_path / "BASE 1x2.PNG";
+	fs::path sequenceZoneFilePath = base_path / relative_arrow_path / "BASE 1x2.PNG";
 
-	sf::Texture* texture = RetrieveTexture(arrowFilePath);
-	sf::IntRect* sequenceZoneRect = GenerateRect(*texture,1,2);
+	sf::Texture* sequenceZoneTexture = RetrieveTexture(sequenceZoneFilePath);
+	sf::IntRect* sequenceZoneRect = GenerateRect(*sequenceZoneTexture, 1, 2,false);
 
-	objListSingleton->AddObject(new Object(0, 0, texture, sequenceZoneRect));
-	objListSingleton->AddObject(new Object(100, 100, texture, sequenceZoneRect));
-	objListSingleton->AddObject(new Object(100, 100, texture, sequenceZoneRect));
-	objListSingleton->AddObject(new Object(200, 200, texture, sequenceZoneRect));
-	objListSingleton->AddObject(new Object(300, 300, texture, sequenceZoneRect));
+	fs::path blueArrowFilePath = base_path / relative_arrow_path / "DownLeft Tap Note 6x1.png";
+	sf::Texture* blueArrowTexture = RetrieveTexture(blueArrowFilePath);
+	sf::IntRect* bottomLeftArrowRect = GenerateRect(*blueArrowTexture, 6, 1,false);
+
+	fs::path redArrowFilePath = base_path / relative_arrow_path / "UpLeft Tap Note 6x1.png";
+	sf::Texture* redArrowTexture = RetrieveTexture(redArrowFilePath);
+	sf::IntRect* topLeftArrowRect = GenerateRect(*redArrowTexture, 6, 1,false);
+
+	fs::path centerNoteFilePath = base_path / relative_arrow_path / "Center Tap Note 6x1.png";
+	sf::Texture* centerNoteTexture = RetrieveTexture(centerNoteFilePath);
+	sf::IntRect* centerNoteRect = GenerateRect(*centerNoteTexture, 6, 1,false);
+
+	sf::IntRect* topRightArrowRect = GenerateRect(*redArrowTexture, 6, 1, true);
+	sf::IntRect* bottomRightArrowRect = GenerateRect(*blueArrowTexture, 6, 1, true);
+
+	objListSingleton->AddObject(new Object(0, 0, sequenceZoneTexture, sequenceZoneRect));
+
+	objListSingleton->AddObject(new Object(0, 100, blueArrowTexture, bottomLeftArrowRect));
+	objListSingleton->AddObject(new Object(50, 100, redArrowTexture, topLeftArrowRect));
+	objListSingleton->AddObject(new Object(100, 100, centerNoteTexture, centerNoteRect));
+	objListSingleton->AddObject(new Object(150, 100, redArrowTexture, topRightArrowRect));
+	objListSingleton->AddObject(new Object(200, 100, blueArrowTexture, bottomRightArrowRect));
 
 	GameLevel gameLevel;
 	SSCLevelParser sscLevelParser;
 	SSCFile* sscFile = fileLoaderSingleton->GetSSCFile(0);
 	SSCFileLevels* sscFileLevel = sscFile->GetLevel(0);
 
-	sscLevelParser.ParseFile(sscFile->GetSSCFullPath(),sscFileLevel->GetCharStart(), sscFileLevel->GetCharEnd());
+	sscLevelParser.ParseFile(sscFile->GetSSCFullPath(), sscFileLevel->GetCharStart(), sscFileLevel->GetCharEnd());
 
 	RenderEngine render = RenderEngine(objListSingleton);
 	render.render();
-		
+
 	return 0;
 }
