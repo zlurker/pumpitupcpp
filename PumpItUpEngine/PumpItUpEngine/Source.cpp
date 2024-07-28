@@ -59,13 +59,13 @@ int main() {
 	sf::IntRect* topRightArrowRect = GenerateRect(*redArrowTexture, 6, 1, true);
 	sf::IntRect* bottomRightArrowRect = GenerateRect(*blueArrowTexture, 6, 1, true);
 
-	objListSingleton->AddObject(new Object(0, 0, sequenceZoneTexture, sequenceZoneRect));
+	objListSingleton->AddObject(new Object(0, 0, blueArrowTexture, bottomLeftArrowRect));
+	objListSingleton->AddObject(new Object(50, 0, redArrowTexture, topLeftArrowRect));
+	objListSingleton->AddObject(new Object(100, 0, centerNoteTexture, centerNoteRect));
+	objListSingleton->AddObject(new Object(150, 0, redArrowTexture, topRightArrowRect));
+	objListSingleton->AddObject(new Object(200, 0, blueArrowTexture, bottomRightArrowRect));
 
-	objListSingleton->AddObject(new Object(0, 100, blueArrowTexture, bottomLeftArrowRect));
-	objListSingleton->AddObject(new Object(50, 100, redArrowTexture, topLeftArrowRect));
-	objListSingleton->AddObject(new Object(100, 100, centerNoteTexture, centerNoteRect));
-	objListSingleton->AddObject(new Object(150, 100, redArrowTexture, topRightArrowRect));
-	objListSingleton->AddObject(new Object(200, 100, blueArrowTexture, bottomRightArrowRect));
+	objListSingleton->AddObject(new Object(0, 0, sequenceZoneTexture, sequenceZoneRect));
 
 	GameLevel gameLevel;
 	SSCLevelParser sscLevelParser;

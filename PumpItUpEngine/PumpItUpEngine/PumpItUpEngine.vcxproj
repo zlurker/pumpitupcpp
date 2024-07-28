@@ -161,6 +161,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectList.cpp" />
     <ClCompile Include="RenderEngine.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SSCFile.cpp" />
     <ClCompile Include="SSCFileLevels.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectList.h" />
     <ClInclude Include="RenderEngine.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="SSCFile.h" />
     <ClInclude Include="SSCFileLevels.h" />
     <ClInclude Include="SSCLevelParser.h" />
