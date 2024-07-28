@@ -5,6 +5,8 @@
 #include <iostream>
 #include "SSCLevelParser.h"
 #include "GameLevel.h"
+#include "SceneManager.h"
+#include "GameLevelScene.h"
 namespace fs = std::filesystem;
 
 sf::Texture* RetrieveTexture(const fs::path& arrowFilePath) {
@@ -28,10 +30,14 @@ sf::IntRect* GenerateRect(const sf::Texture& texture, int widthDivision, int hei
 	return rect;
 }
 
+void RenderLoop() {
+
+}
+
 int main() {
 
 
-	ObjectList* objListSingleton = new ObjectList();
+	ObjectList objListSingleton;
 	FileLoader* fileLoaderSingleton = new FileLoader();
 	fileLoaderSingleton->LoadSSCFiles();
 
@@ -59,13 +65,13 @@ int main() {
 	sf::IntRect* topRightArrowRect = GenerateRect(*redArrowTexture, 6, 1, true);
 	sf::IntRect* bottomRightArrowRect = GenerateRect(*blueArrowTexture, 6, 1, true);
 
-	objListSingleton->AddObject(new Object(0, 0, blueArrowTexture, bottomLeftArrowRect));
-	objListSingleton->AddObject(new Object(50, 0, redArrowTexture, topLeftArrowRect));
-	objListSingleton->AddObject(new Object(100, 0, centerNoteTexture, centerNoteRect));
-	objListSingleton->AddObject(new Object(150, 0, redArrowTexture, topRightArrowRect));
-	objListSingleton->AddObject(new Object(200, 0, blueArrowTexture, bottomRightArrowRect));
+	objListSingleton.AddObject(new Object(0, 0, blueArrowTexture, bottomLeftArrowRect));
+	objListSingleton.AddObject(new Object(50, 0, redArrowTexture, topLeftArrowRect));
+	objListSingleton.AddObject(new Object(100, 0, centerNoteTexture, centerNoteRect));
+	objListSingleton.AddObject(new Object(150, 0, redArrowTexture, topRightArrowRect));
+	objListSingleton.AddObject(new Object(200, 0, blueArrowTexture, bottomRightArrowRect));
 
-	objListSingleton->AddObject(new Object(0, 0, sequenceZoneTexture, sequenceZoneRect));
+	objListSingleton.AddObject(new Object(0, 0, sequenceZoneTexture, sequenceZoneRect));
 
 	GameLevel gameLevel;
 	SSCLevelParser sscLevelParser;
@@ -74,8 +80,27 @@ int main() {
 
 	sscLevelParser.ParseFile(sscFile->GetSSCFullPath(), sscFileLevel->GetCharStart(), sscFileLevel->GetCharEnd());
 
-	RenderEngine render = RenderEngine(objListSingleton);
-	render.render();
+	RenderEngine render = RenderEngine(&objListSingleton);
 
+	std::thread renderThread([&render]() {
+		render.render();
+	});
+
+	std::cout << "Render logic is up." << std::endl;
+	
+	SceneManager sceneManager(&objListSingleton, &render);
+
+	std::thread sceneManagementThread([&sceneManager]() {
+		sceneManager.SceneManagerLogic();
+	});
+	std::cout << "Scene Management Logic is up." << std::endl;
+
+	GameLevelScene gameLevelScene;
+	sceneManager.SetScene(&gameLevelScene);
+	// Wait for the threads to complete
+	renderThread.join();
+	sceneManagementThread.join();
+
+	std::cout << "Main thread finished." << std::endl;
 	return 0;
 }

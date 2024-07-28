@@ -1,7 +1,7 @@
 #include "GameLevelScene.h"
 #include <iostream>
 
-GameLevelScene::GameLevelScene(ObjectList* oL):Scene(oL) {
+GameLevelScene::GameLevelScene() {
 
 }
 

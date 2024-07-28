@@ -154,7 +154,6 @@
   <ItemGroup>
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="FileParserBase.cpp" />
-    <ClCompile Include="GameLevel.cpp" />
     <ClCompile Include="GameLevelScene.cpp" />
     <ClCompile Include="MainSSCParser.cpp" />
     <ClCompile Include="NoteData.cpp" />
@@ -163,6 +162,7 @@
     <ClCompile Include="ObjectList.cpp" />
     <ClCompile Include="RenderEngine.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SSCFile.cpp" />
     <ClCompile Include="SSCFileLevels.cpp" />
@@ -171,7 +171,6 @@
   <ItemGroup>
     <ClInclude Include="FileLoader.h" />
     <ClInclude Include="FileParserBase.h" />
-    <ClInclude Include="GameLevel.h" />
     <ClInclude Include="GameLevelScene.h" />
     <ClInclude Include="MainSSCParser.h" />
     <ClInclude Include="NoteData.h" />
@@ -180,6 +179,7 @@
     <ClInclude Include="ObjectList.h" />
     <ClInclude Include="RenderEngine.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SSCFile.h" />
     <ClInclude Include="SSCFileLevels.h" />
     <ClInclude Include="SSCLevelParser.h" />

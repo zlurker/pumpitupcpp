@@ -4,7 +4,7 @@ class GameLevelScene :
     public Scene
 {
 public:
-    GameLevelScene(ObjectList*);
+    GameLevelScene();
     virtual void OnLevelLoaded();
     virtual void OnUpdate();
 };
