@@ -1,6 +1,7 @@
 ﻿  FileLoader.cpp
   FileParserBase.cpp
   GameLevel.cpp
+  GameLevelScene.cpp
   MainSSCParser.cpp
   NoteData.cpp
   NoteLineData.cpp
