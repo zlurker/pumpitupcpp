@@ -17,6 +17,7 @@ void SceneManager::SetScene(Scene* scene) {
 
 void SceneManager::SceneManagerLogic() {
 	while (true) {
+		std::lock_guard<std::mutex> guard(sceneMutex);
 		if (currentScene != nullptr) {
 			currentScene->OnUpdate();
 		}
