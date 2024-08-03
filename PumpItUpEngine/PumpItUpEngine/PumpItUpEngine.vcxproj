@@ -167,6 +167,8 @@
     <ClCompile Include="SSCFile.cpp" />
     <ClCompile Include="SSCFileLevels.cpp" />
     <ClCompile Include="SSCLevelParser.cpp" />
+    <ClCompile Include="TextureData.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileLoader.h" />
@@ -183,6 +185,8 @@
     <ClInclude Include="SSCFile.h" />
     <ClInclude Include="SSCFileLevels.h" />
     <ClInclude Include="SSCLevelParser.h" />
+    <ClInclude Include="TextureData.h" />
+    <ClInclude Include="TextureManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
