@@ -1,5 +1,9 @@
 #include "TextureData.h"
 
+TextureData::TextureData() {
+
+}
+
 TextureData::TextureData(sf::Texture* t) {
 	texture = t;
 
