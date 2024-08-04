@@ -1,2 +1,43 @@
-﻿  TextureManager.cpp
+﻿  FileLoader.cpp
+  FileParserBase.cpp
+  GameLevelScene.cpp
+  MainSSCParser.cpp
+  NoteData.cpp
+  NoteLineData.cpp
+  Object.cpp
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(12,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(11,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(10,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(9,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  ObjectList.cpp
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\ObjectList.cpp(12,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  RenderEngine.cpp
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Scene.cpp
+  SceneManager.cpp
+  Source.cpp
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Source.cpp(74,12): warning C4101: 'gameLevel': unreferenced local variable
+  SSCFile.cpp
+  SSCFileLevels.cpp
+  SSCLevelParser.cpp
+  TextureData.cpp
+  TextureManager.cpp
+  Generating Code...
   PumpItUpEngine.vcxproj -> C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe

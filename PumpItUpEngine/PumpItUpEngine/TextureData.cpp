@@ -3,10 +3,10 @@
 TextureData::TextureData(){
 }
 
-TextureData::TextureData(sf::Texture* t) {
+TextureData::TextureData(sf::Texture t) {
 	texture = t;
 
-	sf::Vector2u size = t->getSize();
+	sf::Vector2u size = t.getSize();
 	width = size.x;
 	height = size.y;
 }
@@ -20,5 +20,5 @@ unsigned int TextureData::GetHeight() {
 }
 
 sf::Texture* TextureData::GetTexture() {
-	return texture;
+	return &texture;
 }
