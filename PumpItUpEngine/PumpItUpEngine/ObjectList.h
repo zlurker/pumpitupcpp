@@ -7,12 +7,12 @@ class ObjectList
 {
 public:
 	ObjectList();
-	std::vector<Object*> GetObjectList();
-	void AddObject(Object*);
+	const std::vector<Object>& GetObjectList();
+	int AddObject(Object);
 	void ClearAllObjects();
 
 private:
-	std::vector<Object*>* objectList;
+	std::vector<Object> objectList;
 	std::mutex listMutex;
 };
 

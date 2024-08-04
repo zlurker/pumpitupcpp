@@ -1,7 +1,6 @@
 #include "TextureData.h"
 
-TextureData::TextureData() {
-
+TextureData::TextureData(){
 }
 
 TextureData::TextureData(sf::Texture* t) {
@@ -18,4 +17,8 @@ unsigned int TextureData::GetWidth() {
 
 unsigned int TextureData::GetHeight() {
 	return height;
+}
+
+sf::Texture* TextureData::GetTexture() {
+	return texture;
 }

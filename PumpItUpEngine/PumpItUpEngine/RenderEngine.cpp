@@ -49,11 +49,11 @@ void RenderEngine::render() {
 		}
 
 		window.clear();
-		std::vector<Object*> objectList = objectListSingleton->GetObjectList();
+		std::vector<Object> objectList = objectListSingleton->GetObjectList();
 		for (int i = 0; i < objectList.size(); i++) {
-			sf::Sprite sprite(*objectList[i]->GetTexture());
-			sprite.setTextureRect(*objectList[i]->GetTextureRect());
-			sprite.setPosition(objectList[i]->GetX(), objectList[i]->GetY());
+			sf::Sprite sprite(*objectList[i].GetTextureData()->GetTexture());
+			sprite.setTextureRect(*objectList[i].GetTextureRect());
+			sprite.setPosition(objectList[i].GetX(), objectList[i].GetY());
 			window.draw(sprite);
 		}
 		/*sf::CircleShape shape(50);

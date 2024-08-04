@@ -1,24 +1,2 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : The process cannot access the file 'c:\users\gabriel\documents\piu\pumpitupcpp\pumpitupengine\pumpitupengine\x64\debug\sscfilelevels.obj' because it is being used by another process.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : The process cannot access the file 'c:\users\gabriel\documents\piu\pumpitupcpp\pumpitupengine\pumpitupengine\x64\debug\scene.obj' because it is being used by another process.
-  FileLoader.cpp
-  FileParserBase.cpp
-  GameLevelScene.cpp
-  MainSSCParser.cpp
-  NoteData.cpp
-  NoteLineData.cpp
-  Object.cpp
-  ObjectList.cpp
-  RenderEngine.cpp
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Scene.cpp
-  SceneManager.cpp
-  Source.cpp
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Source.cpp(68,12): warning C4101: 'gameLevel': unreferenced local variable
-  SSCFile.cpp
-  SSCFileLevels.cpp
-  SSCLevelParser.cpp
-  TextureData.cpp
-  TextureManager.cpp
-  Generating Code...
+﻿  TextureManager.cpp
   PumpItUpEngine.vcxproj -> C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe

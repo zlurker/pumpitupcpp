@@ -1,22 +1,23 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "TextureData.h"
 
 class Object
 {
 public:
-	Object(int, int, sf::Texture*, sf::IntRect* tR);
+	Object(int, int, TextureData*, float startXRatio, float startYRatio, float lengthXRatio, float lengthYRatio);
 	void SetX(int);
 	void SetY(int);
 	int GetX();
 	int GetY();
-	void SetTexture(sf::Texture*);
-	sf::Texture* GetTexture();
+	void SetTexture(TextureData*);
+	TextureData* GetTextureData();
 	sf::IntRect* GetTextureRect();
 
 private:
 	int x;
 	int y;
-	sf::Texture* texture;
-	sf::IntRect* textureRect;
+	TextureData* textureData;
+	sf::IntRect textureRect;
 };
 

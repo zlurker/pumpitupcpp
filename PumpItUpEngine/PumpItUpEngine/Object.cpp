@@ -1,10 +1,16 @@
 #include "Object.h"
 
-Object::Object(int xc, int yc, sf::Texture* texturec, sf::IntRect* tR) {
+Object::Object(int xc, int yc, TextureData* tD, float startXRatio, float startYRatio, float lengthXRatio, float lengthYRatio) {
 	x = xc;
 	y = yc;
-	texture = texturec;
-	textureRect = tR;
+	textureData = tD;
+
+	textureRect = sf::IntRect(
+		startXRatio * textureData->GetWidth(), 
+		startYRatio * textureData->GetHeight(), 
+		lengthXRatio * textureData->GetWidth(), 
+		lengthYRatio * textureData->GetHeight()
+	);
 }
 
 int Object::GetX() {
@@ -23,14 +29,14 @@ void Object::SetY(int yc) {
 	y = yc;
 }
 
-void Object::SetTexture(sf::Texture* texturec) {
-	texture = texturec;
+void Object::SetTexture(TextureData* texturec) {
+	textureData = texturec;
 }
 
-sf::Texture* Object::GetTexture() {
-	return texture;
+TextureData* Object::GetTextureData() {
+	return textureData;
 }
 
 sf::IntRect* Object::GetTextureRect() {
-	return textureRect;
+	return &textureRect;
 }
