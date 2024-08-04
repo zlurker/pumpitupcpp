@@ -5,7 +5,7 @@ class TextureData
 {
 public:
 	TextureData();
-	TextureData(sf::Texture);
+	TextureData(const sf::Texture&);
 	unsigned int GetWidth();
 	unsigned int GetHeight();
 	sf::Texture* GetTexture();

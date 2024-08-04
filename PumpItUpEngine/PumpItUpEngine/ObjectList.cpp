@@ -9,7 +9,7 @@ const std::vector<Object>& ObjectList::GetObjectList() {
 
 int ObjectList::AddObject(Object object) {
 	std::lock_guard<std::mutex> guard(listMutex); // Lock the mutex
-	int objectId = objectList.size();
+	float objectId = objectList.size();
 	objectList.push_back(object);
 	return objectId;
 }

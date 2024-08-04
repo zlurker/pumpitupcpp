@@ -3,7 +3,7 @@
 TextureData::TextureData(){
 }
 
-TextureData::TextureData(sf::Texture t) {
+TextureData::TextureData(const sf::Texture& t) {
 	texture = t;
 
 	sf::Vector2u size = t.getSize();

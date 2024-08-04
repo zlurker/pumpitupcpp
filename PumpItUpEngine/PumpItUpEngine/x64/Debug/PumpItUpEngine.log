@@ -26,14 +26,15 @@ C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.
               T=int
           ]
   ObjectList.cpp
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\ObjectList.cpp(12,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\ObjectList.cpp(12,17): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'float', possible loss of data
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\ObjectList.cpp(14,9): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
   RenderEngine.cpp
 C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Scene.cpp
   SceneManager.cpp
   Source.cpp
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Source.cpp(74,12): warning C4101: 'gameLevel': unreferenced local variable
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Source.cpp(35,12): warning C4101: 'gameLevel': unreferenced local variable
   SSCFile.cpp
   SSCFileLevels.cpp
   SSCLevelParser.cpp

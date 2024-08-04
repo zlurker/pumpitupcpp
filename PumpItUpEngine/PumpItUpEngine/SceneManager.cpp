@@ -1,9 +1,10 @@
 #include "SceneManager.h"
 #include "Scene.h"
 
-SceneManager::SceneManager(ObjectList* oL, RenderEngine* rE) {
+SceneManager::SceneManager(ObjectList* oL, RenderEngine* rE, TextureManager* tM) {
 	objectList = oL;
 	renderEngine = rE;
+	textureManager = tM;
 }
 
 void SceneManager::SetScene(Scene* scene) {
