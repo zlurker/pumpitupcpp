@@ -152,6 +152,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimationModule.cpp" />
+    <ClCompile Include="AnimationParameter.cpp" />
+    <ClCompile Include="AnimationTarget.cpp" />
     <ClCompile Include="FileLoader.cpp" />
     <ClCompile Include="FileParserBase.cpp" />
     <ClCompile Include="GameLevelScene.cpp" />
@@ -160,6 +163,7 @@
     <ClCompile Include="NoteLineData.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectList.cpp" />
+    <ClCompile Include="PercentageRect.cpp" />
     <ClCompile Include="RenderEngine.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -171,6 +175,9 @@
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimationModule.h" />
+    <ClInclude Include="AnimationParameter.h" />
+    <ClInclude Include="AnimationTarget.h" />
     <ClInclude Include="FileLoader.h" />
     <ClInclude Include="FileParserBase.h" />
     <ClInclude Include="GameLevelScene.h" />
@@ -179,6 +186,7 @@
     <ClInclude Include="NoteLineData.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectList.h" />
+    <ClInclude Include="PercentageRect.h" />
     <ClInclude Include="RenderEngine.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />

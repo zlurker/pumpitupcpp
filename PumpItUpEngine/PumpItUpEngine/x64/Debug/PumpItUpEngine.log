@@ -1,4 +1,7 @@
-﻿  FileLoader.cpp
+﻿  AnimationModule.cpp
+  AnimationParameter.cpp
+  AnimationTarget.cpp
+  FileLoader.cpp
   FileParserBase.cpp
   GameLevelScene.cpp
   MainSSCParser.cpp
@@ -28,6 +31,27 @@ C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.
   ObjectList.cpp
 C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\ObjectList.cpp(12,17): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'float', possible loss of data
 C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\ObjectList.cpp(14,9): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+  PercentageRect.cpp
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(15,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(14,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(13,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(12,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
   RenderEngine.cpp
 C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderEngine.cpp(56,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -39,6 +63,9 @@ C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Source.
   SSCFileLevels.cpp
   SSCLevelParser.cpp
   TextureData.cpp
+  Generating Code...
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(11): warning C4172: returning address of local variable or temporary
+  Compiling...
   TextureManager.cpp
   Generating Code...
   PumpItUpEngine.vcxproj -> C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\x64\Debug\PumpItUpEngine.exe
