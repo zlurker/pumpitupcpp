@@ -8,6 +8,7 @@
 #include "SceneManager.h"
 #include "GameLevelScene.h"
 #include "TextureManager.h"
+#include "RatioRect.h"
 namespace fs = std::filesystem;
 
 int main() {
@@ -62,8 +63,8 @@ int main() {
 	objListSingleton.AddObject(Object(100, 0, centerNoteTexture, centerNoteRect));
 	objListSingleton.AddObject(Object(150, 0, redArrowTexture, topRightArrowRect));
 	objListSingleton.AddObject(Object(200, 0, blueArrowTexture, bottomRightArrowRect));*/
-
-	objListSingleton.AddObject(Object(0, 0, textureManager.GetTextureData("base"),0,0,1,0.5f));
+	RatioRect sequenceZoneRatio(0, 0, 1, 0.5f);
+	objListSingleton.AddObject(Object(0, 0, textureManager.GetTextureData("base"), &sequenceZoneRatio));
 	// Wait for the threads to complete
 	renderThread.join();
 	sceneManagementThread.join();

@@ -163,7 +163,7 @@
     <ClCompile Include="NoteLineData.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectList.cpp" />
-    <ClCompile Include="PercentageRect.cpp" />
+    <ClCompile Include="RatioRect.cpp" />
     <ClCompile Include="RenderEngine.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
@@ -186,7 +186,7 @@
     <ClInclude Include="NoteLineData.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectList.h" />
-    <ClInclude Include="PercentageRect.h" />
+    <ClInclude Include="RatioRect.h" />
     <ClInclude Include="RenderEngine.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />

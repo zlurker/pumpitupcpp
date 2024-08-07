@@ -1,16 +1,11 @@
 #include "Object.h"
 
-Object::Object(int xc, int yc, TextureData* tD, float startXRatio, float startYRatio, float lengthXRatio, float lengthYRatio) {
+Object::Object(int xc, int yc, TextureData* tD, RatioRect* ratioRect) {
 	x = xc;
 	y = yc;
 	textureData = tD;
 
-	textureRect = sf::IntRect(
-		startXRatio * textureData->GetWidth(), 
-		startYRatio * textureData->GetHeight(), 
-		lengthXRatio * textureData->GetWidth(), 
-		lengthYRatio * textureData->GetHeight()
-	);
+	textureRect = ratioRect->GenerateRect(tD->GetWidth(), tD->GetHeight());
 }
 
 int Object::GetX() {

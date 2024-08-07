@@ -1,11 +1,12 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "TextureData.h"
+#include "RatioRect.h"
 
 class Object
 {
 public:
-	Object(int, int, TextureData*, float startXRatio, float startYRatio, float lengthXRatio, float lengthYRatio);
+	Object(int, int, TextureData*, RatioRect*);
 	void SetX(int);
 	void SetY(int);
 	int GetX();

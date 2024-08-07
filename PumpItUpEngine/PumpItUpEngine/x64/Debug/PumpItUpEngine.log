@@ -8,46 +8,28 @@
   NoteData.cpp
   NoteLineData.cpp
   Object.cpp
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(12,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(11,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(10,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(9,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(8,69): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Object.cpp(8,52): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
   ObjectList.cpp
 C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\ObjectList.cpp(12,17): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'float', possible loss of data
 C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\ObjectList.cpp(14,9): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-  PercentageRect.cpp
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(15,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+  RatioRect.cpp
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RatioRect.cpp(15,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(14,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RatioRect.cpp(14,16): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(13,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RatioRect.cpp(13,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(12,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RatioRect.cpp(12,15): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
@@ -58,13 +40,13 @@ C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RenderE
   Scene.cpp
   SceneManager.cpp
   Source.cpp
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Source.cpp(35,12): warning C4101: 'gameLevel': unreferenced local variable
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\Source.cpp(36,12): warning C4101: 'gameLevel': unreferenced local variable
   SSCFile.cpp
   SSCFileLevels.cpp
   SSCLevelParser.cpp
   TextureData.cpp
   Generating Code...
-C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\PercentageRect.cpp(11): warning C4172: returning address of local variable or temporary
+C:\Users\Gabriel\Documents\PIU\pumpitupcpp\PumpItUpEngine\PumpItUpEngine\RatioRect.cpp(11): warning C4172: returning address of local variable or temporary
   Compiling...
   TextureManager.cpp
   Generating Code...
