@@ -1,5 +1,9 @@
 #include "Animation.h"
 
+Animation::Animation() {
+
+}
+
 Animation::Animation(const std::vector<RatioRect>& aS) {
 	animationSequence = aS;
 }

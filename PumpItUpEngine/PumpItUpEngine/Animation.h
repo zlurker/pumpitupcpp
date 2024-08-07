@@ -5,6 +5,7 @@
 class Animation
 {
 public:
+	Animation();
 	Animation(const std::vector<RatioRect>&);
 	RatioRect* GetFrame(int);
 private:
