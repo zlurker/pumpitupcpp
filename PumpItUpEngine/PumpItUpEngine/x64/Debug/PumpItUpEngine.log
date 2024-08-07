@@ -1,5 +1,5 @@
 ﻿  AnimationModule.cpp
-  AnimationParameter.cpp
+  Animation.cpp
   AnimationTarget.cpp
   FileLoader.cpp
   FileParserBase.cpp

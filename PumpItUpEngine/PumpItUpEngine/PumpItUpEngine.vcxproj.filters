@@ -72,7 +72,7 @@
     <ClCompile Include="AnimationTarget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationParameter.cpp">
+    <ClCompile Include="Animation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RatioRect.cpp">
@@ -134,7 +134,7 @@
     <ClInclude Include="AnimationTarget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationParameter.h">
+    <ClInclude Include="Animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RatioRect.h">
